@@ -1,3 +1,4 @@
+import { AppCheck } from '@angular/fire/app-check';
 import { inject, Injectable } from '@angular/core';
 import {
   Auth,
@@ -54,6 +55,7 @@ type ChatMessage = {
   providedIn: 'root',
 })
 export class ChatService {
+  appCheck: AppCheck = inject(AppCheck);
   firestore: Firestore = inject(Firestore);
   auth: Auth = inject(Auth);
   storage: Storage = inject(Storage);
